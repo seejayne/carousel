@@ -79,17 +79,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_form" id="lV2-UR-szp">
-                                <rect key="frame" x="0.0" y="150" width="320" height="113"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="9Pz-CQ-2Cd">
-                                <rect key="frame" x="26" y="170" width="272" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="sCa-jT-pns">
-                                <rect key="frame" x="26" y="215" width="272" height="30"/>
+                                <rect key="frame" x="26" y="150" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -108,14 +102,70 @@
                                     <action selector="onBackButton:" destination="Q1h-DJ-0Uh" eventType="touchUpInside" id="fmw-6s-1Cz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="AFK-9e-aXP">
+                                <rect key="frame" x="0.0" y="227" width="320" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rbJ-KD-4Bd">
+                                <rect key="frame" x="21" y="238" width="277" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSignInButton:" destination="Q1h-DJ-0Uh" eventType="touchUpInside" id="5IG-IZ-vur"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="fKY-uF-9Fv">
+                                <rect key="frame" x="264" y="254" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="9Pz-CQ-2Cd">
+                                <rect key="frame" x="26" y="105" width="272" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gxn-5F-dPl" appends="YES" id="Oyq-ou-TaE"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="aDn-Xz-2r2"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="9Pz-CQ-2Cd" id="1Gv-an-a8I"/>
+                        <outlet property="loadingActivityView" destination="fKY-uF-9Fv" id="nJM-HY-0Uy"/>
+                        <outlet property="passwordTextField" destination="sCa-jT-pns" id="WzO-aj-okS"/>
+                        <segue destination="9OM-2T-Mmv" kind="modal" identifier="signinSegue" modalTransitionStyle="flipHorizontal" id="DAH-8L-YFU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dif-fg-BOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gxn-5F-dPl">
+                    <connections>
+                        <action selector="onTap:" destination="Q1h-DJ-0Uh" id="LyW-a6-I3d"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1117" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gYz-p0-wh4">
+            <objects>
+                <viewController id="9OM-2T-Mmv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0L-JP-1cK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome1" id="EpR-uV-JG5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aDn-Xz-2r2"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dif-fg-BOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sp-Lg-3OI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="123"/>
+            <point key="canvasLocation" x="1530" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dIn-47-EHj">
@@ -146,7 +196,9 @@
         <image name="intro_tile5" width="76" height="75"/>
         <image name="intro_tile6" width="76" height="75"/>
         <image name="login_form" width="320" height="113"/>
+        <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
+        <image name="welcome1" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
