@@ -1,5 +1,5 @@
 //
-//  IntroViewController.swift
+//  SignInViewController.swift
 //  carousel
 //
 //  Created by Jayne Vidheecharoen on 9/18/14.
@@ -8,15 +8,11 @@
 
 import UIKit
 
-class IntroViewController: UIViewController {
+class SignInViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var introImageView: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.contentSize = introImageView.frame.size
 
         // Do any additional setup after loading the view.
     }
@@ -26,6 +22,9 @@ class IntroViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onBackButton(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation
