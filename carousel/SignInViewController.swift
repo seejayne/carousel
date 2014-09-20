@@ -16,7 +16,10 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadingActivityView: UIActivityIndicatorView!
 
+    @IBOutlet weak var scrollView: UIScrollView!
 
+
+    // Sign In Button
     @IBAction func onSignInButton(sender: UIButton) {
         
         //loadingActivityView.startAnimating()
@@ -41,21 +44,31 @@ class SignInViewController: UIViewController {
             // errors
             }else if(self.emailTextField.text == ""){
                 UIAlertView(title: "Email required", message: "Please enter your email address", delegate: nil, cancelButtonTitle: "Ok").show()
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
             }else if(self.passwordTextField.text == ""){
                 UIAlertView(title: "Password required", message: "Please enter your password", delegate: nil, cancelButtonTitle: "Ok").show()
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
             }else{
                 UIAlertView(title: "Sign In Failed", message: "Incorrect email or password", delegate: nil, cancelButtonTitle: "Try again").show()
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
             }
         })
         
+        
     }
-    
+ 
+    // Initialize
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: 320, height: 500)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    
     }
     
     // Delay Function
-    
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -65,7 +78,16 @@ class SignInViewController: UIViewController {
             dispatch_get_main_queue(), closure)
     }
     
-
+    // keyboard functions
+    func keyboardWillShow(notification: NSNotification!) {
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        
+    }
+    
+    // useless memory function?
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,6 +97,7 @@ class SignInViewController: UIViewController {
     @IBAction func onBackButton(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
     }
+    
     // Dismiss Keyboard
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
