@@ -17,6 +17,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var loadingActivityView: UIActivityIndicatorView!
 
     @IBOutlet weak var scrollView: UIScrollView!
+   
+    @IBOutlet weak var signInButtonView: UIView!
 
 
     // Sign In Button
@@ -81,9 +83,62 @@ class SignInViewController: UIViewController {
     // keyboard functions
     func keyboardWillShow(notification: NSNotification!) {
         
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification. Is this useful?
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        
+        // Animate stuff
+        UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+            
+            // Set view properties in here that you want to match with the animation of the keyboard
+            // If you need it, you can use the kbSize property above to get the keyboard width and height.
+            
+            // Move that scrollView
+            //self.scrollView.contentOffset.y = kbSize.height
+            //self.scrollView.setContentOffset(CGPoint(x: 0, y: (kbSize.height)-10), animated: true)
+            
+            //self.scrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
+            
+            self.scrollView.contentOffset.y = 150
+            self.signInButtonView.center.y = 325
+            }, completion: nil)
+        
+        
     }
     
     func keyboardWillHide(notification: NSNotification!) {
+        
+        
+        
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+            
+            // Set view properties in here that you want to match with the animation of the keyboard
+            // If you need it, you can use the kbSize property above to get the keyboard width and height.
+            
+            // move that scroll view!
+            self.scrollView.contentOffset.y = 0
+            
+            self.signInButtonView.center.y = 415
+            }, completion: nil)
+
+        
         
     }
     
