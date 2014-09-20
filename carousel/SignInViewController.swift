@@ -15,6 +15,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadingActivityView: UIActivityIndicatorView!
+
+
     @IBAction func onSignInButton(sender: UIButton) {
         
         //loadingActivityView.startAnimating()
@@ -50,10 +52,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
     
     // Delay Function
     
@@ -65,8 +64,6 @@ class SignInViewController: UIViewController {
             ),
             dispatch_get_main_queue(), closure)
     }
-    
-    
     
 
     override func didReceiveMemoryWarning() {
@@ -82,14 +79,5 @@ class SignInViewController: UIViewController {
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
