@@ -115,8 +115,6 @@ class SignInViewController: UIViewController {
     
     func keyboardWillHide(notification: NSNotification!) {
         
-        
-        
         var userInfo = notification.userInfo!
         
         // Get the keyboard height and width from the notification
@@ -137,16 +135,9 @@ class SignInViewController: UIViewController {
             
             self.signInButtonView.center.y = 415
             }, completion: nil)
-
-        
         
     }
     
-    // useless memory function?
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // Back button
     @IBAction func onBackButton(sender: UIButton) {

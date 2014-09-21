@@ -8,15 +8,19 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var carouselSpinView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.contentSize = CGSize(width: 1280, height: 518)
+        scrollView.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,7 +29,11 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        
     
+    }
     
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
@@ -34,6 +42,7 @@ class WelcomeViewController: UIViewController {
         
         // Set the current page, so the dots will update
         pageControl.currentPage = page
+        
     }
 
     /*
