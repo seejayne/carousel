@@ -97,15 +97,6 @@ class SignInViewController: UIViewController {
         // Animate stuff
         UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
             
-            // Set view properties in here that you want to match with the animation of the keyboard
-            // If you need it, you can use the kbSize property above to get the keyboard width and height.
-            
-            // Move that scrollView
-            //self.scrollView.contentOffset.y = kbSize.height
-            //self.scrollView.setContentOffset(CGPoint(x: 0, y: (kbSize.height)-10), animated: true)
-            
-            //self.scrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
-            
             self.scrollView.contentOffset.y = 150
             self.signInButtonView.center.y = 325
             }, completion: nil)
@@ -126,10 +117,7 @@ class SignInViewController: UIViewController {
         var animationCurve = curveValue.integerValue
         
         UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
-            
-            // Set view properties in here that you want to match with the animation of the keyboard
-            // If you need it, you can use the kbSize property above to get the keyboard width and height.
-            
+
             // move that scroll view!
             self.scrollView.contentOffset.y = 0
             

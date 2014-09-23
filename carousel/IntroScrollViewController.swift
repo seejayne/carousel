@@ -43,6 +43,7 @@ class IntroScrollViewController: UIViewController, UIScrollViewDelegate {
         tileName.transform = CGAffineTransformRotate(tileName.transform, CGFloat(Double(rotation) * M_PI / 180))
         
     }
+    
 
     // set up
     override func viewDidLoad() {
