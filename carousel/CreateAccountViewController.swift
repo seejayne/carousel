@@ -15,6 +15,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordAgainTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var onCreateButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
     
     @IBAction func onCheckButton(sender: UIButton) {
         sender.selected = !sender.selected
@@ -89,6 +90,13 @@ class CreateAccountViewController: UIViewController {
          navigationController?.popViewControllerAnimated(true)
     }
 
+    @IBAction func onCreateButton(sender: AnyObject) {
+        if (checkButton.selected == false){
+            UIAlertView(title: "Terms of Service", message: "You must agree to our terms of service before continuing", delegate: nil, cancelButtonTitle: "OK").show()
+        }else{
+            performSegueWithIdentifier("tutorialSegue", sender: self)
+        }
+    }
     /*
     // MARK: - Navigation
 

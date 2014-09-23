@@ -108,8 +108,8 @@
                                     <action selector="onBackButton:" destination="Q1h-DJ-0Uh" eventType="touchUpInside" id="fmw-6s-1Cz"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4Wb-HI-GSa">
-                                <rect key="frame" x="0.0" y="74" width="332" height="494"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" id="4Wb-HI-GSa">
+                                <rect key="frame" x="0.0" y="74" width="332" height="800"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_text" id="T1W-ma-3WZ">
@@ -459,7 +459,7 @@
                                     <action selector="onBackButton:" destination="mgE-6q-9j7" eventType="touchUpInside" id="MXw-Zs-fHv"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="stV-LL-T4B">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" id="stV-LL-T4B">
                                 <rect key="frame" x="0.0" y="74" width="332" height="494"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -525,6 +525,9 @@
                                         <rect key="frame" x="0.0" y="412" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="create_button"/>
+                                        <connections>
+                                            <action selector="onCreateButton:" destination="mgE-6q-9j7" eventType="touchUpInside" id="O4Z-RV-bR1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -539,11 +542,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="6hT-Vy-RIU"/>
                     <connections>
+                        <outlet property="checkButton" destination="cjf-5P-wHG" id="bMJ-KL-orh"/>
                         <outlet property="emailTextField" destination="ZJc-VM-115" id="aUf-Fe-L0h"/>
                         <outlet property="onCreateButton" destination="V40-J2-Shj" id="uAk-6k-3Jg"/>
                         <outlet property="passwordAgainTextField" destination="CZ7-Gt-cLh" id="WrY-qG-aBM"/>
                         <outlet property="passwordTextField" destination="b6X-aa-niv" id="p3D-Un-URC"/>
                         <outlet property="scrollView" destination="stV-LL-T4B" id="7WP-Gi-epb"/>
+                        <segue destination="9OM-2T-Mmv" kind="modal" identifier="tutorialSegue" id="Ma4-3A-wrG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0X-v9-BV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,4 +642,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ma4-3A-wrG"/>
+    </inferredMetricsTieBreakers>
 </document>
