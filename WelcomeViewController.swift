@@ -13,6 +13,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var onSpinButton: UIButton!
+    
+    @IBOutlet weak var toggle: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +46,20 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         // Set the current page, so the dots will update
         pageControl.currentPage = page
         
-        if (page == 4){
-        
+        if (page == 3){
+            UIView.animateWithDuration(0.5, animations: {
+                self.onSpinButton.alpha = 1
+                self.pageControl.alpha = 0
+                self.toggle.alpha = 1
+            })
+
+        }else{
+            UIView.animateWithDuration(0.5, animations: {
+                self.onSpinButton.alpha = 0
+                self.pageControl.alpha = 1
+                self.toggle.alpha = 0
+            })
         }
-        
     }
 
     /*
