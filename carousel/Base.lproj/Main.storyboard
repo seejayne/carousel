@@ -225,7 +225,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Rfo-YL-vJk" kind="modal" modalTransitionStyle="crossDissolve" id="5Rb-ia-hso"/>
+                                            <segue destination="Rfo-YL-vJk" kind="modal" id="b0d-J1-7ub"/>
                                         </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="pgN-d3-8a5">
@@ -377,7 +377,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYI-cp-3ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="845"/>
+            <point key="canvasLocation" x="2092" y="835"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="7Mx-kZ-ucV">

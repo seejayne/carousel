@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var carouselSpinView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,10 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         
         // Set the current page, so the dots will update
         pageControl.currentPage = page
+        
+        if (page == 4){
+        
+        }
         
     }
 
